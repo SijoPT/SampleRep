@@ -18,29 +18,9 @@ default_platform :ios
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-   
-  Dec “Creating a code signing certificate and provisioning profile”
-
-  lane :provision do  
     
-Produce(
-
-   app_name: ‘JenkinsTest’
-   Language: ‘English’
-   app_version: ‘1.0’
-   Sku: ‘123abc’
-
-        )
-
-      Cert
-
-      sigh(force: true)
+    
   end
-
-   Error do |lane, exception|
-   #if there is an occur the lane executed
-  end
-
 
   desc "Runs all the tests"
   lane :test do
